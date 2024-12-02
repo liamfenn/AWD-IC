@@ -1,38 +1,174 @@
 .App {
-  text-align: center;
+  min-height: 100vh;
+  background: #1a1a1a;
+  color: white;
+  overflow-x: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: #ff0055;
+  transform-origin: 0%;
+  z-index: 1000;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.effect {
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.box {
+  width: 150px;
+  height: 150px;
+  background: #ff0055;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.advanced-box {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #ff0055, #0099ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.circle {
+  width: 100px;
+  height: 100px;
+  background: #0099ff;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 400px;
+}
+
+.grid-item {
+  width: 100px;
+  height: 100px;
+  background: #ff0055;
+  border-radius: 10px;
+}
+
+.text-scramble {
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.perspective-container {
+  perspective: 1000px;
+}
+
+.card {
+  width: 200px;
+  height: 300px;
+  position: relative;
+  cursor: pointer;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  backface-visibility: hidden;
+  border-radius: 20px;
+}
+
+.card-front {
+  background: linear-gradient(135deg, #ff0055, #ff4400);
+}
+
+.card-back {
+  background: linear-gradient(135deg, #0099ff, #00ff99);
+  transform: rotateY(180deg);
+}
+
+.particles-container {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #ff0055;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wave-text {
+  font-size: 4rem;
+  font-weight: bold;
+  display: flex;
+  gap: 0.5rem;
+  perspective: 1000px;
+}
+
+.wave-text span {
+  display: inline-block;
+  color: #ff0055;
+}
+
+.magnetic-box {
+  width: 150px;
+  height: 150px;
+  background: linear-gradient(45deg, #ff0055, #ff8800);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  cursor: grab;
+  box-shadow: 0 10px 30px rgba(255, 0, 85, 0.3);
+}
+
+h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+section:nth-child(odd) {
+  background: #232323;
+} 
